@@ -1,19 +1,16 @@
-//
-//  ContentView.swift
-//  TestSPMDependencyError
-//
-//  Created by Roberto Pastor on 22/5/23.
-//
-
+import Foo
+import Bar
 import SwiftUI
 
 struct ContentView: View {
+    let foo = FooImplementation()
+    let bar = Bar()
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("FOO? \(foo.foo())")
+
+            Text("BAR? \(bar.bar())")
         }
         .padding()
     }
